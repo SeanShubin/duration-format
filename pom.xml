@@ -49,11 +49,6 @@
                 <version>2.11.4</version>
             </dependency>
             <dependency>
-                <groupId>org.scala-lang.modules</groupId>
-                <artifactId>scala-xml_2.11</artifactId>
-                <version>1.0.2</version>
-            </dependency>
-            <dependency>
                 <groupId>org.scalatest</groupId>
                 <artifactId>scalatest_2.11</artifactId>
                 <version>2.2.2</version>
