@@ -11,33 +11,9 @@
     <modules>
         <module>format</module>
     </modules>
-    <repositories>
-        <repository>
-            <id>scala-tools.org</id>
-            <name>Scala-tools Maven2 Repository</name>
-            <url>https://oss.sonatype.org/content/groups/scala-tools/</url>
-        </repository>
-    </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>central</id>
-            <name>Maven Plugin Repository</name>
-            <url>http://repo1.maven.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </pluginRepository>
-        <pluginRepository>
-            <id>scala-tools.org</id>
-            <name>Scala-tools Maven2 Repository</name>
-            <url>https://oss.sonatype.org/content/groups/scala-tools/</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>onejar-maven-plugin.googlecode.com</id>
+            <id>onejar</id>
             <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
         </pluginRepository>
     </pluginRepositories>
