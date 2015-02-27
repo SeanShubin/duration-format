@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.seanshubin</groupId>
     <artifactId>duration</artifactId>
@@ -11,12 +12,6 @@
     <modules>
         <module>format</module>
     </modules>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>onejar</id>
-            <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-        </pluginRepository>
-    </pluginRepositories>
     <dependencyManagement>
         <dependencies>
             <dependency>

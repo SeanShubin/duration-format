@@ -1,0 +1,21 @@
+table {
+    border-collapse: collapse;
+    margin-bottom: 2em;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-left: 0;
+}
+
+.summary, .report-entry-depends-on, .report-entry-depended-on-by, .report-entry-cycle-parts, .report-entry-cycle, .report-entry-cycle-added, .report-entry-cycle-removed {
+    margin-bottom: 2em;
+}

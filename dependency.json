@@ -1,0 +1,31 @@
+{
+    "searchPaths": [
+        [ "format", "target", "duration-format-1.0-SNAPSHOT.jar" ]
+    ],
+    "styleSheet": [ "dependency.css" ],
+    "relevantDependencyPattern": {
+        "includeRegex": [ "com/seanshubin/duration/format/.*" ],
+        "excludeRegex": [ ]
+    },
+    "trimRegex": "^com/seanshubin/duration/format/",
+    "classFileNamePattern": {
+        "includeRegex": [ ".*\\.class" ],
+        "excludeRegex": [ ]
+    },
+    "zipFileNamePattern": {
+        "includeRegex": [ ".*\\.zip", ".*\\.war", ".*\\.jar" ],
+        "excludeRegex": [ ]
+    },
+    "generatedReportDirectory": [ "format", "target", "dependency-report" ],
+    "classLimits": {
+        "depth": 11,
+        "complexity": 100,
+        "cycleCount": 0
+    },
+    "packageLimits": {
+        "depth": 4,
+        "complexity": 10,
+        "cycleCount": 0
+    },
+    "failIfAnyLimitExceeded": true
+}

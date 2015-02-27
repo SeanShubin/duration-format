@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><project>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.seanshubin</groupId>
@@ -25,6 +26,40 @@
             <plugin>
                 <groupId>org.scalatest</groupId>
                 <artifactId>scalatest-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <id>dependency analysis</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.seanshubin.dependency.console.ConsoleApplication</mainClass>
+                            <arguments>
+                                <argument>dependency.json</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includePluginDependencies>true</includePluginDependencies>
+                    <executableDependency>
+                        <groupId>com.seanshubin</groupId>
+                        <artifactId>dependency-console</artifactId>
+                    </executableDependency>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.seanshubin</groupId>
+                        <artifactId>dependency-console</artifactId>
+                        <version>1.0-SNAPSHOT</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
