@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.seanshubin</groupId>
-        <artifactId>duration</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
+
+    <!-- The Basics -->
+    <!--<groupId>...</groupId>-->
     <artifactId>duration-format</artifactId>
-    <name>duration-format</name>
+    <!--<version>...</version>-->
+    <!--<packaging>...</packaging>-->
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
@@ -19,6 +20,16 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <parent>
+        <groupId>com.seanshubin</groupId>
+        <artifactId>duration</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <!--<dependencyManagement>...</dependencyManagement>-->
+    <!--<modules>...</modules>-->
+    <!--<properties>...</properties>-->
+
+    <!-- Build Settings -->
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
         <testSourceDirectory>src/test/scala</testSourceDirectory>
@@ -28,39 +39,43 @@
                 <artifactId>scalatest-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
+                <groupId>com.seanshubin.detangler</groupId>
+                <artifactId>detangler-maven-plugin</artifactId>
+                <version>1.0-SNAPSHOT</version>
                 <executions>
                     <execution>
-                        <id>dependency analysis</id>
                         <phase>verify</phase>
                         <goals>
-                            <goal>java</goal>
+                            <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <mainClass>com.seanshubin.dependency.console.ConsoleApplication</mainClass>
-                            <arguments>
-                                <argument>dependency.json</argument>
-                            </arguments>
-                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
-                    <includePluginDependencies>true</includePluginDependencies>
-                    <executableDependency>
-                        <groupId>com.seanshubin</groupId>
-                        <artifactId>dependency-console</artifactId>
-                    </executableDependency>
+                    <detanglerConfig>detangler.txt</detanglerConfig>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.seanshubin</groupId>
-                        <artifactId>dependency-console</artifactId>
-                        <version>1.0-SNAPSHOT</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>
+    <!--<reporting>...</reporting>-->
+
+    <!-- More Project Information -->
+    <name>duration-format</name>
+    <!--<description>...</description>-->
+    <!--<url>...</url>-->
+    <!--<inceptionYear>...</inceptionYear>-->
+    <!--<licenses>...</licenses>-->
+    <!--<organization>...</organization>-->
+    <!--<developers>...</developers>-->
+    <!--<contributors>...</contributors>-->
+
+    <!-- Environment Settings -->
+    <!--<issueManagement>...</issueManagement>-->
+    <!--<ciManagement>...</ciManagement>-->
+    <!--<mailingLists>...</mailingLists>-->
+    <!--<scm>...</scm>-->
+    <!--<prerequisites>...</prerequisites>-->
+    <!--<repositories>...</repositories>-->
+    <!--<pluginRepositories>...</pluginRepositories>-->
+    <!--<distributionManagement>...</distributionManagement>-->
+    <!--<profiles>...</profiles>-->
 </project>

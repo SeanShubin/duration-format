@@ -1,0 +1,17 @@
+{
+  reportDir generated/detangled
+  searchPaths
+  [
+    format/target/duration-format-1.0-SNAPSHOT.jar
+  ]
+  level 2
+  startsWith
+  {
+    include [[com seanshubin duration format]]
+    exclude []
+    drop [[com seanshubin duration format]]
+  }
+  ignoreFiles []
+  canFailBuild true
+  allowedInCycle []
+}
