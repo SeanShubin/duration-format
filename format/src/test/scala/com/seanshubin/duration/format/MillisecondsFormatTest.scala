@@ -1,7 +1,7 @@
 package com.seanshubin.duration.format
 
+import com.seanshubin.duration.format.DurationFormat.{MillisecondsFormat, MillisecondsFormatPadded}
 import org.scalatest.FunSuite
-import DurationFormat.MillisecondsFormat
 
 class MillisecondsFormatTest extends FunSuite {
   test("parse") {
@@ -25,6 +25,10 @@ class MillisecondsFormatTest extends FunSuite {
     assertParse("9223372036854775807", "9,223,372,036,854,775,807")
     assertParse("9223372036854775807 milliseconds", "9,223,372,036,854,775,807")
     assertParse("106751991167 days 7 hours 12 minutes 55 seconds 807 milliseconds", "9,223,372,036,854,775,807")
+  }
+
+  test("parse trims whitespace") {
+    assert(MillisecondsFormat.parse(" 1  minute ") === 60000)
   }
 
   test("back and forth") {
@@ -58,6 +62,18 @@ class MillisecondsFormatTest extends FunSuite {
     assert(MillisecondsFormat.parse("12 seconds 34 milliseconds 2 seconds") === 14034)
   }
 
+  test("aligned") {
+    assertAligned(0, "0 milliseconds")
+    assertAligned(1, "  1 millisecond ")
+    assertAligned(2, "  2 milliseconds")
+    assertAligned(10, " 10 milliseconds")
+    assertAligned(100, "100 milliseconds")
+    assertAligned(999, "999 milliseconds")
+    assertAligned(9223372036310399999L, "106751991160 days 23 hours 59 minutes 59 seconds 999 milliseconds")
+    assertAligned(90061001, "1 day   1 hour   1 minute   1 second    1 millisecond ")
+    assertAligned(180122002, "2 days  2 hours  2 minutes  2 seconds   2 milliseconds")
+  }
+
   def assertParse(verbose: String, expected: String) {
     val parsed: Long = MillisecondsFormat.parse(verbose)
     val actual = f"$parsed%,d"
@@ -80,5 +96,8 @@ class MillisecondsFormatTest extends FunSuite {
     }
   }
 
-
+  def assertAligned(milliseconds: Long, expected: String): Unit = {
+    val actual = MillisecondsFormatPadded.format(milliseconds)
+    assert(actual === expected)
+  }
 }

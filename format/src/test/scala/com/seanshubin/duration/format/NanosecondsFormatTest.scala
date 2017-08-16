@@ -1,7 +1,7 @@
 package com.seanshubin.duration.format
 
+import com.seanshubin.duration.format.DurationFormat.NanosecondsFormat
 import org.scalatest.FunSuite
-import DurationFormat.NanosecondsFormat
 
 class NanosecondsFormatTest extends FunSuite {
   test("parse") {
